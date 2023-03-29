@@ -49,8 +49,6 @@ def score_game(func) -> int:
     # каждого загаданного случайного числа
     count_ls = []
     
-    # np.random.seed(1)  
-    
     # массив, где будут храниться загадываемые случайные числа
     random_array = np.random.randint(1, 101, size=(1_000))
     
