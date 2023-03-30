@@ -16,7 +16,7 @@ def random_predict(number: int=1) -> int:
     # число попыток (начальное значение)
     count = 0
     # границы рассматриваемого целочисленного отрезка (первоначальные)
-    a, b = 1, 101
+    a, b = 0, 101
     
     while True:
         count += 1  # включается счетчик числа попыток
@@ -50,7 +50,7 @@ def score_game(func) -> int:
     count_ls = []
     
     # массив, где будут храниться загадываемые случайные числа
-    random_array = np.random.randint(1, 101, size=(1_000))
+    random_array = np.random.randint(0, 101, size=(1_000))
     
     # заполняется список 
     for number in random_array:
