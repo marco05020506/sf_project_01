@@ -4,6 +4,7 @@
 import numpy as np
 
 
+
 def random_predict(number: int=1) -> int:
     """ Угадываем число методом половинного деления 
 
@@ -62,6 +63,7 @@ def score_game(func) -> int:
     print(f'Ваш алгоритм угадывает число в среднем за: {score} попыток')
     return score
     
+
 
 if __name__ == '__main__':
     score_game(random_predict) 
