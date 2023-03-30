@@ -4,15 +4,14 @@
 import numpy as np
 
 
-
 def random_predict(number: int=1) -> int:
-    """ Угадываем число методом половинного деления 
+    """ Угадываем число методом половинного деления (см. readme.md)
 
     Args:
         number (int, optional): Загаданное число. Defaults to 1.
 
     Returns:
-        int: число попыток
+        int: Число попыток
     """
     # Число попыток (начальное значение)
     count = 0
@@ -21,7 +20,7 @@ def random_predict(number: int=1) -> int:
     
     while True:
         count += 1  # Включается счетчик числа попыток
-        predict_number = (a+b) // 2  # Берется для проверки целочисленная середина отрезка
+        predict_number = (a+b) // 2  # Предполагаемое число как целочисленная середина отрезка
         
         if predict_number == number:
             break   #  В этом случае загаданное число найдено :)
@@ -35,7 +34,6 @@ def random_predict(number: int=1) -> int:
     return count
 
 
-
 def score_game(func) -> int:
     """ Определение среднего количества попыток угадывания из 1_000 подходов
 
@@ -43,7 +41,7 @@ def score_game(func) -> int:
         random_predict ([type]): Функция угадывания
 
     Returns:
-        int: среднее количество попыток
+        int: Среднее количество попыток
     """
     
     # Список, где будут храниться числа попыток, потребовавшихся для угадывания
@@ -63,7 +61,6 @@ def score_game(func) -> int:
     print(f'Ваш алгоритм угадывает число в среднем за: {score} попыток')
     return score
     
-
 
 if __name__ == '__main__':
     score_game(random_predict) 
