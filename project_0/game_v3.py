@@ -26,15 +26,15 @@ def random_predict(number: int=1) -> int:
             break   #  В этом случае загаданное число найдено :)
         
         elif predict_number < number:
-            a = predict_number  # Уменьшаем отрезок надвое сдвинув к середине нижний конец отрезка
+            a = predict_number  # Уменьшаем отрезок вдвое сдвинув к середине нижний конец отрезка
             
         else:
-            b = predict_number  # Уменьшаем отрезок надвое сдвинув к середине верхний конец отрезка
+            b = predict_number  # Уменьшаем отрезок вдвое сдвинув к середине верхний конец отрезка
     
     return count
 
 
-def score_game(func) -> int:
+def score_game(random_predict) -> int:
     """ Определение среднего количества попыток угадывания из 1_000 подходов
 
     Args:
@@ -53,7 +53,7 @@ def score_game(func) -> int:
     
     # Заполняется список 
     for number in random_array:
-        count_ls.append(func(number)) 
+        count_ls.append(random_predict(number)) 
     
     # Определяется среднее значение количества попыток   
     score = int(np.mean(count_ls))
